@@ -42,5 +42,16 @@ public class ContactServiceImpl implements ContactService {
 		repository.deleteById(cid);
 		return "Contact deleted successfully";
 	}
+	
+	@Override
+	public String deleteSoft(int cid) {		
+		Optional<Contact> findById = repository.findById(cid);
+		if(findById.isPresent()) {
+			Contact contact = findById.get();
+			contact.setActiveSw("N");
+			repository.save(contact);
+		}
+		return "Contact deleted soft";
+	}
 
 }

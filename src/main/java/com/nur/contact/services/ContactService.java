@@ -13,5 +13,7 @@ public interface ContactService {
 	Contact getContact(int cid);
 	
 	String deleteContact(int cid);
+	
+	String deleteSoft(int cid);
 
 }

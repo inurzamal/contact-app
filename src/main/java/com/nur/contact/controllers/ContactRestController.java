@@ -49,5 +49,12 @@ public class ContactRestController {
 		String deleteContact = service.deleteContact(cid);
 		return new ResponseEntity<>(deleteContact,HttpStatus.OK);	
 	}
+	
+	@DeleteMapping("/softdel/{cid}")
+	public ResponseEntity<String> deleteSoft(@PathVariable int cid){
+		String deleteSoft = service.deleteSoft(cid);
+		return new ResponseEntity<>(deleteSoft, HttpStatus.OK);
+		
+	}
 
 }
